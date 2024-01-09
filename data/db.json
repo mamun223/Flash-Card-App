@@ -1,0 +1,34 @@
+{
+  "decks": [
+    {
+      "name": "Mock Rendering in React",
+      "description": "RIR",
+      "id": 1
+    },
+    {
+      "name": "Mock React Router",
+      "description": "RR",
+      "id": 2
+    }
+  ],
+  "cards": [
+    {
+      "front": "first card front",
+      "back": "first card back",
+      "deckId": 1,
+      "id": 1
+    },
+    {
+      "front": "fghfgh",
+      "back": "fghfdghg",
+      "deckId": 1,
+      "id": 3
+    },
+    {
+      "front": "rsgsfdgfgfgef",
+      "back": "fdhgfghfhfgd",
+      "deckId": 1,
+      "id": 4
+    }
+  ]
+}
