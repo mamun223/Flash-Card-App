@@ -9,7 +9,7 @@ function Decks() {
   const [error, setError] = useState(undefined);
 
   const { deckId } = useParams();
-  console.log(deckId);
+  console.log("deck id in Decks1",deckId);
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -34,7 +34,6 @@ function Decks() {
           await deleteDeck(deck.id);
           setDecks((prevDecks) =>
             prevDecks.filter((prevDeck) => {
-              // console.log("deck.id: ", deck.id, "deckId: ",deckId)
               return prevDeck.id !== deck.id;
             })
           );

@@ -1,29 +1,23 @@
 {
   "decks": [
     {
-      "name": "Mamood Shaban",
-      "description": "goooooooog",
+      "name": "Mamood Shaban edited",
+      "description": "New Deck what ",
       "id": 1
     }
   ],
   "cards": [
     {
-      "front": "Trying the edit card form",
-      "back": "Success!",
+      "front": "card 1 front card edited",
+      "back": "card 1 back card edited again",
       "deckId": 1,
       "id": 1
     },
     {
-      "front": "Did I successfully use the same component for both the add and edit card components?",
-      "back": "YES!",
+      "front": "Lets just add another card to show we know what we are doing",
+      "back": "may be",
       "deckId": 1,
       "id": 2
-    },
-    {
-      "front": "last one!",
-      "back": "just checking!",
-      "deckId": 1,
-      "id": 3
     }
   ]
 }

@@ -71,16 +71,19 @@ function ScreenAddCard() {
     return () => abortController.abort();
   };
 
+  const formValue = ""
+
   const handleSubmitClick = () => {
     handleCreateCard()
-    setCard({
+    setCard((prev) => ({
+      ...prev,
       front: "",
       back: ""
-  })
+  }))
   };
 
   return (
-    <AddEditCard screenName={screenName} deckName={deckName} deckId={deckId} card={card} handleChange={handleChange} handleSubmitClick={handleSubmitClick} />
+    <AddEditCard formValue={formValue} screenName={screenName} deckName={deckName} deckId={deckId} card={card} handleChange={handleChange} handleSubmitClick={handleSubmitClick} />
     // <>
     //   <nav aria-label="breadcrumb">
     //     <ol class="breadcrumb">
