@@ -1,10 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import Next from "./Next";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useHistory } from "react-router-dom";
 
-function Cards({ cardLength, handleNextClick, currentCardIndex, cardFront, cardBack, cardName }) {
+
+function Cards({ deckId, cardLength, handleNextClick, currentCardIndex, cardFront, cardBack, cardName }) {
   const [isFront, setIsFront] = useState(true);
+  const history = useHistory();
 
   const handleCardFlip = () => {
     setIsFront((prevIsFront) => !prevIsFront);
@@ -15,6 +17,7 @@ function Cards({ cardLength, handleNextClick, currentCardIndex, cardFront, cardB
     handleNextClick(); // Call the next click function
   };
 
+  console.log("deckId in Card: ", deckId)
   return (
     <>
       <nav aria-label="breadcrumb">
@@ -23,7 +26,7 @@ function Cards({ cardLength, handleNextClick, currentCardIndex, cardFront, cardB
             <Link to="/">Home</Link>
           </li>
           <li class="breadcrumb-item">
-            <Link href="#">{cardName}</Link>
+            <Link to={`/decks/${deckId}`}>{cardName}</Link>
           </li>
           <li class="breadcrumb-item active" aria-current="page">
             Study:

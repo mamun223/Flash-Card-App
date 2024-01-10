@@ -73,9 +73,11 @@ function Next() {
     console.log("current card back: ", cardBack);
     console.log("current card name: ", cardName)
     console.log("deck fetched by the readDeck in Next: ", deck);
+    console.log("deckId in Next: ", deckId)
 
     return (
       <Cards
+        deckId={deckId}
         cardLength={cardLength}
         handleNextClick={handleNextClick}
         currentCardIndex={currentCardIndex}

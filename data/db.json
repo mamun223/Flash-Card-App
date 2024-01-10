@@ -2,7 +2,7 @@
   "decks": [
     {
       "name": "Mamood Shaban edited",
-      "description": "New Deck what ",
+      "description": "New Deck",
       "id": 1
     }
   ],
@@ -18,6 +18,18 @@
       "back": "may be",
       "deckId": 1,
       "id": 2
+    },
+    {
+      "front": "second card front",
+      "back": "Second card back",
+      "deckId": 1,
+      "id": 3
+    },
+    {
+      "front": "Test ahidfgsgfds",
+      "back": "okkkkfgsdgfd",
+      "deckId": 1,
+      "id": 4
     }
   ]
 }
