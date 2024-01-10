@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 import { listDecks, deleteDeck, readDeck } from "../utils/api";
 import Deck from "./Deck";
 import Study from "./Study";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 function Decks() {
   const [decks, setDecks] = useState([]);
   const [error, setError] = useState(undefined);
 
+  const { deckId } = useParams();
+  console.log(deckId);
 
   useEffect(() => {
     const abortController = new AbortController();
@@ -27,7 +30,15 @@ function Decks() {
         const result = window.confirm(
           "Delete this deck?\n\n You will not be able to recover it."
         );
-        if (result) await deleteDeck(deck.id);
+        if (result) {
+          await deleteDeck(deck.id);
+          setDecks((prevDecks) =>
+            prevDecks.filter((prevDeck) => {
+              // console.log("deck.id: ", deck.id, "deckId: ",deckId)
+              return prevDeck.id !== deck.id;
+            })
+          );
+        }
       }}
     />
   ));

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { deleteCard } from "../utils/api";
+import { deleteCard, readDeck } from "../utils/api";
 import { Link, useParams } from "react-router-dom/cjs/react-router-dom.min";
 
-function CardsInDeck({ cardId, cardFront, cardBack }) {
+function CardsInDeck({ setDeck, cards, cardId, cardFront, cardBack }) {
 
   const { deckId } = useParams()
+
+  console.log("cards in cardsInDeck: ",cards)
 
 
   const handleDelete =  async () => {
@@ -13,6 +15,10 @@ function CardsInDeck({ cardId, cardFront, cardBack }) {
     );
     if (result) {
       await deleteCard(cardId);
+      readDeck(deckId)
+      .then((deck) => {
+        setDeck(deck)
+      })
     }
   }
 

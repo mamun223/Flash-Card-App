@@ -1,34 +1,29 @@
 {
   "decks": [
     {
-      "name": "Mock Rendering in React",
-      "description": "RIR",
+      "name": "Mamood Shaban",
+      "description": "goooooooog",
       "id": 1
-    },
-    {
-      "name": "Mock React Router",
-      "description": "RR",
-      "id": 2
     }
   ],
   "cards": [
     {
-      "front": "first card front",
-      "back": "first card back",
+      "front": "Trying the edit card form",
+      "back": "Success!",
       "deckId": 1,
       "id": 1
     },
     {
-      "front": "fghfgh",
-      "back": "fghfdghg",
+      "front": "Did I successfully use the same component for both the add and edit card components?",
+      "back": "YES!",
       "deckId": 1,
-      "id": 3
+      "id": 2
     },
     {
-      "front": "rsgsfdgfgfgef",
-      "back": "fdhgfghfhfgd",
+      "front": "last one!",
+      "back": "just checking!",
       "deckId": 1,
-      "id": 4
+      "id": 3
     }
   ]
 }

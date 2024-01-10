@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link, useHistory, useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { readCard, updateCard, readDeck } from "../utils/api";
+import AddEditCard from "./AddEditCard";
 
 
 function EditCardScreen () {
@@ -64,61 +65,65 @@ function EditCardScreen () {
     }
 
     const handleSubmitClick = () => {
-        handleCardUpdate()
-          history.push(`/decks/${deckId}`)
+      history.push(`/decks/${deckId}`)
+      handleCardUpdate()
     }
 
+    const deckName = deck.name
+    const screenName = "Edit Card"
+    console.log("deck name in EditCardScreen: ", deckName)
 
     return (
-        <>
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <Link to="/">Home</Link>
-              </li>
-              <li class="breadcrumb-item">
-                <Link to={`/decks/${deckId}`}>{card.name}</Link>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                Edit Card
-              </li>
-            </ol>
-            <h1>Edit Card</h1>
-          </nav>
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">
-              Front
-            </label>
-            <textarea
-              name="front"
-              value={ card.front }
-              onChange={handleChange}
-              class="form-control"
-              id="exampleFormControlTextarea1"
-              rows="3"
-            ></textarea>
-          </div>
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">
-              Back
-            </label>
-            <textarea
-              name="back"
-              value={ card.back }
-              onChange={handleChange}
-              class="form-control"
-              id="exampleFormControlTextarea1"
-              rows="3"
-            ></textarea>
-          </div>
+      <AddEditCard screenName={screenName} deckName={deckName} deckId={deckId} card={card} handleChange={handleChange} handleSubmitClick={handleSubmitClick} />
+        // <>
+        //   <nav aria-label="breadcrumb">
+        //     <ol class="breadcrumb">
+        //       <li class="breadcrumb-item">
+        //         <Link to="/">Home</Link>
+        //       </li>
+        //       <li class="breadcrumb-item">
+        //         <Link to={`/decks/${deckId}`}>{card.name}</Link>
+        //       </li>
+        //       <li class="breadcrumb-item active" aria-current="page">
+        //         Edit Card
+        //       </li>
+        //     </ol>
+        //     <h1>Edit Card</h1>
+        //   </nav>
+        //   <div class="mb-3">
+        //     <label for="exampleFormControlTextarea1" class="form-label">
+        //       Front
+        //     </label>
+        //     <textarea
+        //       name="front"
+        //       value={ card.front }
+        //       onChange={handleChange}
+        //       class="form-control"
+        //       id="exampleFormControlTextarea1"
+        //       rows="3"
+        //     ></textarea>
+        //   </div>
+        //   <div class="mb-3">
+        //     <label for="exampleFormControlTextarea1" class="form-label">
+        //       Back
+        //     </label>
+        //     <textarea
+        //       name="back"
+        //       value={ card.back }
+        //       onChange={handleChange}
+        //       class="form-control"
+        //       id="exampleFormControlTextarea1"
+        //       rows="3"
+        //     ></textarea>
+        //   </div>
     
-          <Link to={`/decks/${deckId}`} type="button" class="btn btn-secondary">
-            Cancel
-          </Link>
-          <button onClick={handleSubmitClick} type="button" class="btn btn-primary">
-            Submit
-          </button>
-        </>
+        //   <Link to={`/decks/${deckId}`} type="button" class="btn btn-secondary">
+        //     Cancel
+        //   </Link>
+        //   <button onClick={handleSubmitClick} type="button" class="btn btn-primary">
+        //     Submit
+        //   </button>
+        // </>
       );
 
 }
