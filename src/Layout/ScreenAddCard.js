@@ -9,18 +9,16 @@ import AddEditCard from "./AddEditCard";
 
 function ScreenAddCard() {
   const [deck, setDeck] = useState({});
-  const [card, setCard] = useState({})
+  const [card, setCard] = useState({});
   const [error, setError] = useState(undefined);
 
   const { deckId } = useParams();
   const history = useHistory();
   console.log(deckId);
 
- 
-  
   useEffect(() => {
     const abortController = new AbortController();
-    
+
     readDeck(deckId, abortController.signal)
       .then((deck) => {
         setDeck(deck);
@@ -29,61 +27,75 @@ function ScreenAddCard() {
         setError(error);
       });
 
-      
-      return () => abortController.abort();
+    return () => abortController.abort();
   }, [deckId]);
 
-  const deckName = deck.name
-  const screenName = "Add Card"
-  console.log("deck name in screen Add card: ",deckName)
+  const deckName = deck.name;
+  const screenName = "Add Card";
+  console.log("deck name in screen Add card: ", deckName);
 
-//   useEffect(() => {
-//     const abortController = new AbortController();
-//     createCard(deckId, card, abortController.signal)
-//     .then((card) => {
-//         setCard(card)
-//     })
-//     .catch((error) => {
-//         setError(error)
-//     })
-//   }, [deckId, card])
+  //   useEffect(() => {
+  //     const abortController = new AbortController();
+  //     createCard(deckId, card, abortController.signal)
+  //     .then((card) => {
+  //         setCard(card)
+  //     })
+  //     .catch((error) => {
+  //         setError(error)
+  //     })
+  //   }, [deckId, card])
 
-  console.log("card in screenaddcard: ",card)
+  console.log("card in screenaddcard: ", card);
 
   const handleChange = (event) => {
-    const { name, value } = event.target
-    setCard((prevCard) => ({
-        ...prevCard, [name]: value
-    }))
-  }
+    const { name, value } = event.target;
 
-  console.log("new created card: ", card)
+    setCard((prevCard) => ({
+      ...prevCard,
+      [name]: value,
+    }));
+  };
+
+  console.log("new created card: ", card);
 
   const handleCreateCard = () => {
     const abortController = new AbortController();
     createCard(deckId, card, abortController.signal)
-    .then((card) => {
-        setCard(card)
-    })
-    .catch((error) => {
-        setError(error)
-    })
+      .then((card) => {
+        console.log("after creating the card");
+        // setCard(card);
+      })
+      .catch((error) => {
+        setError(error);
+      });
     return () => abortController.abort();
   };
 
-  const formValue = ""
+  const formValue = "";
 
   const handleSubmitClick = () => {
-    handleCreateCard()
+    history.push(`/decks/${deckId}`)
+    handleCreateCard();
+    // setCard((prev) => ({
+    //   ...prev,
+    //   front: "",
+    //   back: "",
+    // }));
     setCard((prev) => ({
-      ...prev,
-      front: "",
-      back: ""
-  }))
+      prev
+    }));
   };
 
   return (
-    <AddEditCard formValue={formValue} screenName={screenName} deckName={deckName} deckId={deckId} card={card} handleChange={handleChange} handleSubmitClick={handleSubmitClick} />
+    <AddEditCard
+      formValue={formValue}
+      screenName={screenName}
+      deckName={deckName}
+      deckId={deckId}
+      card={card}
+      handleChange={handleChange}
+      handleSubmitClick={handleSubmitClick}
+    />
     // <>
     //   <nav aria-label="breadcrumb">
     //     <ol class="breadcrumb">

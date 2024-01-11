@@ -2,34 +2,52 @@
   "decks": [
     {
       "name": "Mamood Shaban edited",
-      "description": "New Deck",
+      "description": "New Deck Checking ",
       "id": 1
     }
   ],
   "cards": [
     {
-      "front": "card 1 front card edited",
-      "back": "card 1 back card edited again",
+      "front": "card 1 front Now I can breath",
+      "back": "card 1 back ",
       "deckId": 1,
       "id": 1
     },
     {
       "front": "Lets just add another card to show we know what we are doing",
-      "back": "may be",
+      "back": "may be one day",
       "deckId": 1,
       "id": 2
     },
     {
-      "front": "second card front",
+      "front": "second card front to test edit",
       "back": "Second card back",
       "deckId": 1,
       "id": 3
     },
     {
-      "front": "Test ahidfgsgfds",
-      "back": "okkkkfgsdgfd",
+      "front": "Adding card This gotta be a joke",
+      "back": "adding checking back edit",
       "deckId": 1,
       "id": 4
+    },
+    {
+      "front": "sdgsdgfsd hopefully this work",
+      "back": "ds Noew its actually working dan,",
+      "deckId": 1,
+      "id": 5
+    },
+    {
+      "front": "Alhamdulillah",
+      "back": "Praise be to Allah",
+      "deckId": 1,
+      "id": 6
+    },
+    {
+      "front": "last card to test",
+      "back": "hope",
+      "deckId": 1,
+      "id": 7
     }
   ]
 }
